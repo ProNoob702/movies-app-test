@@ -1,6 +1,6 @@
 import "./App.scss";
 import "react-toastify/dist/ReactToastify.css";
-import { AppLayout } from "./layout/layout";
+import { AppLayout } from "./layout/Layout";
 import { ToastContainer } from "react-toastify";
 
 function App() {

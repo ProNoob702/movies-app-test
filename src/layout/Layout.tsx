@@ -1,5 +1,4 @@
 import React from "react";
-import { AppFooter } from "./Footer";
 import { NavBar } from "./NavBar";
 
 export const AppLayout: React.FC<{ children: any }> = ({ children }) => {
@@ -9,7 +8,7 @@ export const AppLayout: React.FC<{ children: any }> = ({ children }) => {
       <main className="grow overflow-y-auto pb-5">
         <div className="container m-auto">{children}</div>
       </main>
-      <AppFooter />
+      {/* <AppFooter /> */}
     </div>
   );
 };

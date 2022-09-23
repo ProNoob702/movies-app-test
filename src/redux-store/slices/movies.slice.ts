@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { moviesData } from "../../dummie-data/movies.data";
 import { IMovie } from "../../models/IMovie";
 
 interface MoviesSliceState {
@@ -6,7 +7,7 @@ interface MoviesSliceState {
 }
 
 const initialState: MoviesSliceState = {
-  moviesList: [{ name: "zzz" }, { name: "bbb" }],
+  moviesList: [...moviesData],
 };
 
 const MoviesSlice = createSlice({

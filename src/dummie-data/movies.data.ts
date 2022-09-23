@@ -2,91 +2,9 @@ import { IMovie } from "../models/IMovie";
 
 export const moviesData: IMovie[] = [
   {
-    id: "01GDNS30RVK5BAFN567692R209",
-    name: "Skyfall",
-    description: `<p><strong><em>Skyfall</em></strong> is a 2012 <a href="spy_film"
-    title="wikilink">spy film</a> and the twenty-third in the <a
-    href="List_of_James_Bond_films" title="wikilink"><em>James Bond</em>
-    series</a> produced by <a href="Eon_Productions" title="wikilink">Eon
-    Productions</a>. The film is the third to star <a href="Daniel_Craig"
-    title="wikilink">Daniel Craig</a> as fictional <a href="MI6"
-    title="wikilink">MI6</a> agent <a href="James_Bond"
-    title="wikilink">James Bond</a> and features <a href="Javier_Bardem"
-    title="wikilink">Javier Bardem</a> as <a href="Raoul_Silva"
-    title="wikilink">Raoul Silva</a>, the <a
-    href="List_of_James_Bond_villains" title="wikilink">villain</a>, with <a
-    href="Judi_Dench" title="wikilink">Judi Dench</a> returning as <a
-    href="M_(James_Bond)" title="wikilink">M</a>. Directed by <a
-    href="Sam_Mendes" title="wikilink">Sam Mendes</a> and written by <a
-    href="Neal_Purvis_and_Robert_Wade" title="wikilink">Neal Purvis, Robert
-    Wade</a>, and <a href="John_Logan_(writer)" title="wikilink">John
-    Logan</a>, the film has Bond investigating a series of targeted data
-    leaks and co-ordinated attacks on MI6 led by Raoul Silva. It sees the
-    return of two recurring characters, <a href="Miss_Moneypenny"
-    title="wikilink">Miss Moneypenny</a> (played by <a href="Naomie_Harris"
-    title="wikilink">Naomie Harris</a>) and <a href="Q_(James_Bond)"
-    title="wikilink">Q</a> (played by <a href="Ben_Whishaw"
-    title="wikilink">Ben Whishaw</a>), after an absence of two films. <a
-    href="Ralph_Fiennes" title="wikilink">Ralph Fiennes</a>, <a
-    href="Bérénice_Marlohe" title="wikilink">Bérénice Marlohe</a> and <a
-    href="Albert_Finney" title="wikilink">Albert Finney</a> are among the
-    supporting cast.</p>
-    <p>Mendes was approached to direct after the release of <em><a
-    href="Quantum_of_Solace" title="wikilink">Quantum of Solace</a></em> in
-    2008. Development of the film was suspended throughout 2010 after <a
-    href="Metro-Goldwyn-Mayer_Pictures" title="wikilink">Metro-Goldwyn-Mayer
-    Pictures</a> (MGM) filed for <a
-    href="Chapter_11,_Title_11,_United_States_Code" title="wikilink">Chapter
-    11 bankruptcy</a>, which caused screenwriter <a href="Peter_Morgan"
-    title="wikilink">Peter Morgan</a> to leave the project. Production
-    resumed in December 2010 after Purvis, Wade, and Logan were hired and a
-    November 2012 release date was announced in January 2011.<a href="#fn1"
-    class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <a
-    href="Principal_photography" title="wikilink">Principal photography</a>
-    began that November after the film's title was revealed and lasted until
-    March 2012, with filming locations including <a href="London"
-    title="wikilink">London</a>, <a href="Shanghai"
-    title="wikilink">Shanghai</a>, <a href="Istanbul"
-    title="wikilink">Istanbul</a>, and <a href="Scotland"
-    title="wikilink">Scotland</a>.</p>
-    <p><em>Skyfall</em> premiered at the <a href="Royal_Albert_Hall"
-    title="wikilink">Royal Albert Hall</a> on 23 October 2012, and was
-    theatrically released in conventional and <a href="IMAX_Corporation"
-    title="wikilink">IMAX</a> formats in the United Kingdom three days later
-    and in the United States on 9 November, to coincide with the 50th
-    anniversary of the first <em>James Bond</em> film <em><a
-    href="Dr._No_(film)" title="wikilink">Dr. No</a></em> (1962).
-    <em>Skyfall</em> received critical acclaim, with praise for Mendes'
-    direction, cast performances, action sequences, cinematography, and
-    musical score. Among its accolades, it won <a
-    href="Academy_Award_for_Best_Sound_Editing" title="wikilink">Best Sound
-    Editing</a> at the <a href="85th_Academy_Awards" title="wikilink">85th
-    Academy Awards</a> and <a
-    href="BAFTA_Award_for_Outstanding_British_Film"
-    title="wikilink">Outstanding British Film</a> at the <a
-    href="66th_British_Academy_Film_Awards" title="wikilink">66th British
-    Academy Film Awards</a>, while its <a href="Skyfall_(Adele_song)"
-    title="wikilink">theme song</a> won the <a
-    href="Academy_Award_for_Best_Original_Song" title="wikilink">Academy
-    Award for Best Original Song</a> and the <a
-    href="Grammy_Award_for_Best_Song_Written_for_Visual_Media"
-    title="wikilink">Grammy Award for Best Song Written for Visual
-    Media</a>. <em>Skyfall</em> grossed $1 billion worldwide, the fourteenth
-    film to do so, and became the then-<a
-    href="List_of_highest-grossing_films" title="wikilink">seventh-highest
-    grossing film of all time</a>, the highest-grossing <em>James Bond</em>
-    film, the <a href="2012_in_film#Highest-grossing_films"
-    title="wikilink">second-highest grossing film of 2012</a>, and the
-    then-highest grossing film released by Sony or MGM.</p>
-    <p>The next film in the series, <em><a href="Spectre_(2015_film)"
-    title="wikilink">Spectre</a></em>, was released in 2015.</p>`,
-    genre: ["action", "adventure"],
-    imgUrl: "https://fr.web.img6.acsta.net/medias/nmedia/18/88/95/51/20264212.jpg",
-  },
-  {
     id: "01GDNSDHW2DWJAH87S5MJC8ASJ",
     name: "Uncharted",
-    description: `<p><strong><em>Uncharted</em></strong> is a 2022 American <a
+    descriptionHtml: `<p><strong><em>Uncharted</em></strong> is a 2022 American <a
     href="action-adventure_film" title="wikilink">action-adventure film</a>
     directed by <a href="Ruben_Fleischer" title="wikilink">Ruben
     Fleischer</a> from a screenplay by <a href="Rafe_Judkins"
@@ -145,12 +63,13 @@ export const moviesData: IMovie[] = [
     title="wikilink">fifth-highest-grossing video game film of all time</a>.
     A sequel is in development.</p>`,
     genre: ["action", "adventure"],
+    descriptionRaw: "Uncharted is an amazing movie",
     imgUrl: "https://i.ytimg.com/vi/qvfQI2dB8pM/maxresdefault.jpg",
   },
   {
     id: "01GDNSE0Z9ZKMVP2GG7WZ32586",
     name: "Gladiator",
-    description: `<p><strong><em>Gladiator</em></strong> is a 2000 <a href="Epic_film"
+    descriptionHtml: `<p><strong><em>Gladiator</em></strong> is a 2000 <a href="Epic_film"
   title="wikilink">epic</a> <a href="historical_drama"
   title="wikilink">historical drama</a> film directed by <a
   href="Ridley_Scott" title="wikilink">Ridley Scott</a> and written by <a
@@ -427,12 +346,13 @@ export const moviesData: IMovie[] = [
   </ul>
   `,
     genre: ["adventure"],
+    descriptionRaw: "Gladiator is super crazy movie, don't miss it",
     imgUrl: "https://hitek.fr/img/up_o/1250517727/hitek_9d84305c34ae34a6f4d0c93ff9a54b3a_1587721229.jpeg",
   },
   {
     id: "01GDNSEA2DZ0NWSC83EK81SNCR",
     name: "Doctor Strange",
-    description: `<p><strong><em>Doctor Strange</em></strong> is a 2016 American <a
+    descriptionHtml: `<p><strong><em>Doctor Strange</em></strong> is a 2016 American <a
     href="superhero_film" title="wikilink">superhero film</a> based on the
     <a href="Marvel_Comics" title="wikilink">Marvel Comics</a> character <a
     href="Doctor_Strange" title="wikilink">of the same name</a>. Produced by
@@ -576,13 +496,14 @@ export const moviesData: IMovie[] = [
     Mordo confronts Pangborn and steals the mystical energy he uses, telling
     him that Earth has "too many sorcerers".</p>`,
     genre: ["fantasy"],
+    descriptionRaw: "Doctor Strange is a fantasy awesome movie",
     imgUrl:
       "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/226DB7C90442683C5F252E9578355540E75C0643925E5ACA9EF87B5AB7340977/scale?width=1200&aspectRatio=1.78&format=jpeg",
   },
   {
     id: "01GDNSEGFF4EYE096SDA56Y3TD",
     name: "Goodfellas",
-    description: `<p><strong><em>Goodfellas<strong><em>(stylized</em></strong>GoodFellas</em></strong>)
+    descriptionHtml: `<p><strong><em>Goodfellas<strong><em>(stylized</em></strong>GoodFellas</em></strong>)
     is a 1990 American <a href="Biographical_film"
     title="wikilink">biographical</a> <a href="Crime_Drama"
     title="wikilink">crime film</a> directed by <a href="Martin_Scorsese"
@@ -725,13 +646,14 @@ export const moviesData: IMovie[] = [
     <section id="footnotes" class="footnotes footnotes-end-of-document"
     role="doc-endnotes">`,
     genre: ["drama"],
+    descriptionRaw: "Goodfellas drama movie for crazy people",
     imgUrl:
       "https://m.media-amazon.com/images/M/MV5BYjllYzEzZDUtMmUxMi00MjEwLWFiYTQtNTg5OWY1MTlhYjI0XkEyXkFqcGdeQW1pYnJ5YW50._V1_.jpg",
   },
   {
     id: "01GDNSERCE8SPZ3ANNMA2R6AFT",
     name: "Bad Boys",
-    description: `<p><strong><em>Bad Boys</em></strong> is a 1995 American <a
+    descriptionHtml: `<p><strong><em>Bad Boys</em></strong> is a 1995 American <a
     href="buddy_cop" title="wikilink">buddy cop</a> <a
     href="action_film#Action-comedy" title="wikilink">action comedy film</a>
     directed by <a href="Michael_Bay" title="wikilink">Michael Bay</a> in
@@ -853,12 +775,13 @@ export const moviesData: IMovie[] = [
     </ol>
     </section>`,
     genre: ["action"],
+    descriptionRaw: "watch Bad Boys don't be like them",
     imgUrl: "https://fr.web.img4.acsta.net/medias/nmedia/18/35/05/23/badboys2_outdoor_art.jpg",
   },
   {
     id: "01GDNXYZ57JKZK8G9M6X1AVAK3",
     name: "Spider-Man",
-    description: `<h4 id="spider_man_1977"><em>Spider-Man</em> (1977)</h4>
+    descriptionHtml: `<h4 id="spider_man_1977"><em>Spider-Man</em> (1977)</h4>
     <p>In 1977, the <a href="Television_pilot" title="wikilink">pilot
     episode</a> of <a href="The_Amazing_Spider-Man_(TV_series)"
     title="wikilink"><em>The Amazing Spider-Man</em> television series</a>
@@ -1092,13 +1015,14 @@ export const moviesData: IMovie[] = [
     role="doc-noteref"><sup>21</sup></a></p>
     `,
     genre: ["fantasy"],
+    descriptionRaw: "The famous spider man movie",
     imgUrl:
       "https://imgr.cineserie.com/2021/12/la-video-conceptuelle-de-spider-man-4-revele-une-bataille-de-super-vilains-de-la-suite-abandonnee-de-sam-raimi-spider-man-4.jpg?imgeng=/f_jpg/cmpr_0/w_660/h_370/m_cropbox&ver=1",
   },
   {
     id: "01GDNXZ4SNPGP4CSRWDPD604EK",
     name: "Batman",
-    description: `<p><strong><em>The Batman</em></strong> is a 2022 American <a
+    descriptionHtml: `<p><strong><em>The Batman</em></strong> is a 2022 American <a
     href="superhero_film" title="wikilink">superhero film</a> based on the
     <a href="DC_Comics" title="wikilink">DC Comics</a> character <a
     href="Batman" title="wikilink">Batman</a>. Produced by <a
@@ -1497,7 +1421,91 @@ export const moviesData: IMovie[] = [
     class="footnote-ref" id="fnref85"
     role="doc-noteref"><sup>85</sup></a></p>`,
     genre: ["fantasy"],
+    descriptionRaw: "the known batman movie",
     imgUrl:
       "https://static.cnews.fr/sites/default/files/robert-pattinson-the-batman-warner-e1632323044397_61ea7f2f6820b_0.jpg",
+  },
+  {
+    id: "01GDNS30RVK5BAFN567692R209",
+    name: "Skyfall",
+    descriptionHtml: `<p><strong><em>Skyfall</em></strong> is a 2012 <a href="spy_film"
+    title="wikilink">spy film</a> and the twenty-third in the <a
+    href="List_of_James_Bond_films" title="wikilink"><em>James Bond</em>
+    series</a> produced by <a href="Eon_Productions" title="wikilink">Eon
+    Productions</a>. The film is the third to star <a href="Daniel_Craig"
+    title="wikilink">Daniel Craig</a> as fictional <a href="MI6"
+    title="wikilink">MI6</a> agent <a href="James_Bond"
+    title="wikilink">James Bond</a> and features <a href="Javier_Bardem"
+    title="wikilink">Javier Bardem</a> as <a href="Raoul_Silva"
+    title="wikilink">Raoul Silva</a>, the <a
+    href="List_of_James_Bond_villains" title="wikilink">villain</a>, with <a
+    href="Judi_Dench" title="wikilink">Judi Dench</a> returning as <a
+    href="M_(James_Bond)" title="wikilink">M</a>. Directed by <a
+    href="Sam_Mendes" title="wikilink">Sam Mendes</a> and written by <a
+    href="Neal_Purvis_and_Robert_Wade" title="wikilink">Neal Purvis, Robert
+    Wade</a>, and <a href="John_Logan_(writer)" title="wikilink">John
+    Logan</a>, the film has Bond investigating a series of targeted data
+    leaks and co-ordinated attacks on MI6 led by Raoul Silva. It sees the
+    return of two recurring characters, <a href="Miss_Moneypenny"
+    title="wikilink">Miss Moneypenny</a> (played by <a href="Naomie_Harris"
+    title="wikilink">Naomie Harris</a>) and <a href="Q_(James_Bond)"
+    title="wikilink">Q</a> (played by <a href="Ben_Whishaw"
+    title="wikilink">Ben Whishaw</a>), after an absence of two films. <a
+    href="Ralph_Fiennes" title="wikilink">Ralph Fiennes</a>, <a
+    href="Bérénice_Marlohe" title="wikilink">Bérénice Marlohe</a> and <a
+    href="Albert_Finney" title="wikilink">Albert Finney</a> are among the
+    supporting cast.</p>
+    <p>Mendes was approached to direct after the release of <em><a
+    href="Quantum_of_Solace" title="wikilink">Quantum of Solace</a></em> in
+    2008. Development of the film was suspended throughout 2010 after <a
+    href="Metro-Goldwyn-Mayer_Pictures" title="wikilink">Metro-Goldwyn-Mayer
+    Pictures</a> (MGM) filed for <a
+    href="Chapter_11,_Title_11,_United_States_Code" title="wikilink">Chapter
+    11 bankruptcy</a>, which caused screenwriter <a href="Peter_Morgan"
+    title="wikilink">Peter Morgan</a> to leave the project. Production
+    resumed in December 2010 after Purvis, Wade, and Logan were hired and a
+    November 2012 release date was announced in January 2011.<a href="#fn1"
+    class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <a
+    href="Principal_photography" title="wikilink">Principal photography</a>
+    began that November after the film's title was revealed and lasted until
+    March 2012, with filming locations including <a href="London"
+    title="wikilink">London</a>, <a href="Shanghai"
+    title="wikilink">Shanghai</a>, <a href="Istanbul"
+    title="wikilink">Istanbul</a>, and <a href="Scotland"
+    title="wikilink">Scotland</a>.</p>
+    <p><em>Skyfall</em> premiered at the <a href="Royal_Albert_Hall"
+    title="wikilink">Royal Albert Hall</a> on 23 October 2012, and was
+    theatrically released in conventional and <a href="IMAX_Corporation"
+    title="wikilink">IMAX</a> formats in the United Kingdom three days later
+    and in the United States on 9 November, to coincide with the 50th
+    anniversary of the first <em>James Bond</em> film <em><a
+    href="Dr._No_(film)" title="wikilink">Dr. No</a></em> (1962).
+    <em>Skyfall</em> received critical acclaim, with praise for Mendes'
+    direction, cast performances, action sequences, cinematography, and
+    musical score. Among its accolades, it won <a
+    href="Academy_Award_for_Best_Sound_Editing" title="wikilink">Best Sound
+    Editing</a> at the <a href="85th_Academy_Awards" title="wikilink">85th
+    Academy Awards</a> and <a
+    href="BAFTA_Award_for_Outstanding_British_Film"
+    title="wikilink">Outstanding British Film</a> at the <a
+    href="66th_British_Academy_Film_Awards" title="wikilink">66th British
+    Academy Film Awards</a>, while its <a href="Skyfall_(Adele_song)"
+    title="wikilink">theme song</a> won the <a
+    href="Academy_Award_for_Best_Original_Song" title="wikilink">Academy
+    Award for Best Original Song</a> and the <a
+    href="Grammy_Award_for_Best_Song_Written_for_Visual_Media"
+    title="wikilink">Grammy Award for Best Song Written for Visual
+    Media</a>. <em>Skyfall</em> grossed $1 billion worldwide, the fourteenth
+    film to do so, and became the then-<a
+    href="List_of_highest-grossing_films" title="wikilink">seventh-highest
+    grossing film of all time</a>, the highest-grossing <em>James Bond</em>
+    film, the <a href="2012_in_film#Highest-grossing_films"
+    title="wikilink">second-highest grossing film of 2012</a>, and the
+    then-highest grossing film released by Sony or MGM.</p>
+    <p>The next film in the series, <em><a href="Spectre_(2015_film)"
+    title="wikilink">Spectre</a></em>, was released in 2015.</p>`,
+    genre: ["action", "adventure"],
+    descriptionRaw: "Skyfall amazing movie",
+    imgUrl: "https://fr.web.img6.acsta.net/medias/nmedia/18/88/95/51/20264212.jpg",
   },
 ];

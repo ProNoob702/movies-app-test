@@ -4,7 +4,8 @@ export interface IMovie {
   id: string;
   name: string;
   genre: MovieGenre[];
-  description: string;
+  descriptionHtml: string;
+  descriptionRaw: string;
   imgUrl: string;
 }
 

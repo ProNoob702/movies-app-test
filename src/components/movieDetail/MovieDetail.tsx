@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { selectMovieDetails } from "../../redux-store/selectors/movies.selectors";
 import { useAppSelector } from "../../redux-store/store";
 import parse from "html-react-parser";
+import { BackBtn } from "../shared/backBtn.component";
 
 export const MovieDetail: React.FC<{}> = () => {
   const { movieId } = useParams();
@@ -39,6 +40,7 @@ export const MovieDetail: React.FC<{}> = () => {
       </div>
       {/* HTML DESCRIPTION SIDE */}
       <div className="mt-4 movieDescriptionHtml">{parse(mov.descriptionHtml)}</div>
+      <BackBtn />
     </>
   );
 };

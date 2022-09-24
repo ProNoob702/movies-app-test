@@ -3,15 +3,15 @@ import { WritableDraft } from "immer/dist/internal";
 import { IMovie, MovieGenre } from "../../models/IMovie";
 
 interface MoviesSliceState {
-  rawMoviesList: IMovie[];
-  moviesList: IMovie[];
+  rawMoviesList: IMovie[] | null;
+  moviesList: IMovie[] | null;
   searchInputValue: string;
   genreFilterType: MovieGenre | "All";
 }
 
 const initialState: MoviesSliceState = {
-  rawMoviesList: [],
-  moviesList: [],
+  rawMoviesList: null,
+  moviesList: null,
   searchInputValue: "",
   genreFilterType: "All",
 };
@@ -41,7 +41,7 @@ const MoviesSlice = createSlice({
 });
 
 const doSearchWithFilter = (state: WritableDraft<MoviesSliceState>) => {
-  const startingData = [...state.rawMoviesList];
+  const startingData = [...state.rawMoviesList!];
 
   // apply search
   if (state.searchInputValue) {
@@ -50,7 +50,7 @@ const doSearchWithFilter = (state: WritableDraft<MoviesSliceState>) => {
     });
     state.moviesList = moviesSearchRes;
   } else {
-    state.moviesList = [...state.rawMoviesList];
+    state.moviesList = [...state.rawMoviesList!];
   }
 
   // apply filter by genre

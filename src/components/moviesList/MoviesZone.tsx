@@ -6,6 +6,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { IMovie } from "../../models/IMovie";
 import { fetchMoviesList } from "../../services/movies.service";
+import { Spinner } from "../shared/Spinner";
+import { NoResult } from "../shared/NoResult";
 
 interface MoviesZoneProps {
   moviesList?: IMovie[] | null;
@@ -17,9 +19,12 @@ class MoviesZone extends React.Component<MoviesZoneProps> {
     const self = this;
     fetchMoviesList()
       .then((res) => {
-        if (self.props.setMovies) {
-          self.props.setMovies(res);
-        }
+        // setTimeout to emitate api call
+        setTimeout(() => {
+          if (self.props.setMovies) {
+            self.props.setMovies(res);
+          }
+        }, 1000);
       })
       .catch((err) => {
         console.error(err);
@@ -27,7 +32,10 @@ class MoviesZone extends React.Component<MoviesZoneProps> {
   }
 
   render() {
-    if (!this.props.moviesList) return null;
+    // if null than still fetching
+    if (!this.props.moviesList) return <Spinner />;
+    // if there is movies but no result
+    if (this.props.moviesList && !this.props.moviesList?.length) return <NoResult />;
     return (
       <div className="mt-8 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
         {this.props.moviesList.map((mov) => (
@@ -52,7 +60,6 @@ const mapStateToProps = (state: IAppState) => ({
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
   setMovies: (newMovies: IMovie[]) => {
-    debugger;
     dispatch(appActions.setMovies(newMovies));
   },
 });

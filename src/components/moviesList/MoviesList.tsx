@@ -1,10 +1,10 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 import { IMovie } from "../../models/IMovie";
 import { getMoviesList } from "../../redux-store/selectors/movies.selectors";
 import { useAppSelector } from "../../redux-store/store";
-import { NiceBtn } from "../shared/btn.component";
 import { CardComponent } from "../shared/card.component";
 import "./MoviesList.scss";
 
@@ -47,14 +47,16 @@ const MoviesZone: React.FC<{ movies: IMovie[] }> = ({ movies }) => {
   return (
     <div className="mt-8 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
       {movies.map((mov) => (
-        <CardComponent
-          key={mov.id}
-          title={mov.name}
-          chips={mov.genre}
-          description={mov.descriptionRaw}
-          imgUrl={mov.imgUrl}
-          imgHeight={280}
-        />
+        <Link to={`/movies/${mov.id}`}>
+          <CardComponent
+            key={mov.id}
+            title={mov.name}
+            chips={mov.genre}
+            description={mov.descriptionRaw}
+            imgUrl={mov.imgUrl}
+            imgHeight={280}
+          />
+        </Link>
       ))}
     </div>
   );

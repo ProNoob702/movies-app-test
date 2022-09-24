@@ -9,10 +9,4 @@ export interface IMovie {
   imgUrl: string;
 }
 
-//   action = "action" ,
-//   adventure =  "adventure",
-//   comedy =   "comedy",
-//   drama = "drama",
-//   fantasy = "fantasy",
-//   horror = "horror",
-// }
+export const GenreArr: MovieGenre[] = ["action", "adventure", "drama", "fantasy"];

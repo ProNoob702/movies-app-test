@@ -27,7 +27,9 @@ export const SearchBar: React.FC<{}> = () => {
           Search
         </label>
         <select className="custom-select" onChange={handleGenreChange}>
-          <option value={"All"}>All</option>
+          <option selected value={"All"}>
+            All
+          </option>
           {GenreArr.map((g) => (
             <option key={g} value={g}>
               {g}

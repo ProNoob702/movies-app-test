@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { selectMovieDetails } from "../../redux-store/selectors/movies.selectors";
 import { useAppSelector } from "../../redux-store/store";
 import parse from "html-react-parser";
-import { BackBtn } from "../shared/backBtn.component";
+import { BackBtn } from "../shared/BackBtn";
 
 export const MovieDetail: React.FC<{}> = () => {
   const { movieId } = useParams();

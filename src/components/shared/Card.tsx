@@ -1,5 +1,5 @@
-import { NiceBtn } from "./btn.component";
-import { ChipComponent } from "./chip.component";
+import { NiceBtn } from "./NiceBtn";
+import { ChipComponent } from "./Chip";
 
 interface ICardProps {
   title: string;

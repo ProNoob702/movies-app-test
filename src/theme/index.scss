@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./components/common.scss";
+@import "./components/select.scss";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
@@ -13,8 +16,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-
-@import "./components/common.scss";
 
 * {
   outline: none;

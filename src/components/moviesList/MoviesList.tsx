@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { getMoviesList } from "../../redux-store/selectors/movies.selectors";
 import { useAppSelector } from "../../redux-store/store";
-import { CardComponent } from "../shared/card.component";
+import { CardComponent } from "../shared/Card";
 import "./MoviesList.scss";
 import { SearchBar } from "./SearchBar";
 

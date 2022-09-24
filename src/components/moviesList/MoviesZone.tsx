@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { getMoviesList } from "../../redux-store/selectors/movies.selectors";
-import { appActions, AppDispatch, IAppState } from "../../redux-store/store";
+import { AppDispatch, IAppState } from "../../redux-store/store";
 import { CardComponent } from "../shared/Card";
 import React from "react";
 import { connect } from "react-redux";
 import { IMovie } from "../../models/IMovie";
-import { fetchMoviesList } from "../../services/movies.service";
 import { Spinner } from "../shared/Spinner";
 import { NoResult } from "../shared/NoResult";
 
@@ -15,22 +14,6 @@ interface MoviesZoneProps {
 }
 
 class MoviesZone extends React.Component<MoviesZoneProps> {
-  componentDidMount(): void {
-    const self = this;
-    fetchMoviesList()
-      .then((res) => {
-        // setTimeout to emitate api call
-        setTimeout(() => {
-          if (self.props.setMovies) {
-            self.props.setMovies(res);
-          }
-        }, 1000);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
   render() {
     // if null than still fetching
     if (!this.props.moviesList) return <Spinner />;
@@ -58,10 +41,6 @@ const mapStateToProps = (state: IAppState) => ({
   moviesList: getMoviesList(state),
 });
 
-const mapDispatchToProps = (dispatch: AppDispatch) => ({
-  setMovies: (newMovies: IMovie[]) => {
-    dispatch(appActions.setMovies(newMovies));
-  },
-});
+const mapDispatchToProps = (dispatch: AppDispatch) => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviesZone);

@@ -4,7 +4,6 @@ import { selectMovieDetails } from "../../redux-store/selectors/movies.selectors
 import { useAppSelector } from "../../redux-store/store";
 import parse from "html-react-parser";
 import { BackBtn } from "../shared/BackBtn";
-import { NoResult } from "../shared/NoResult";
 
 export const MovieDetail: React.FC<{}> = () => {
   const { movieId } = useParams();
@@ -12,7 +11,6 @@ export const MovieDetail: React.FC<{}> = () => {
   if (!mov)
     return (
       <>
-        <NoResult />
         <BackBtn />
       </>
     );

@@ -22,37 +22,42 @@ const MoviesSlice = createSlice({
     doSearchForMovies(state, action: PayloadAction<string | null>) {
       // trim to avoid white search with whitespace
       const newSearchInputVal = action.payload?.trim()?.toLowerCase();
-      // if there is input val => do search
-      if (newSearchInputVal && newSearchInputVal.length > 0) {
-        applySearch(state, newSearchInputVal);
-      } else {
-        // put back inial state
-        state.moviesList = [...moviesData];
+      if (newSearchInputVal != null) {
+        state.searchInputValue = newSearchInputVal;
       }
+      doSearchWithFilter(state);
     },
     doSetNewGenreFilter(state, action: PayloadAction<MovieGenre | "All">) {
-      applyFilterByGenre(state, action.payload);
+      state.genreFilterType = action.payload;
+      doSearchWithFilter(state);
     },
   },
 });
 
-const applySearch = (state: WritableDraft<MoviesSliceState>, newSearchInputVal: string) => {
-  state.searchInputValue = newSearchInputVal;
-  const newMovies = moviesData.filter((x) => {
-    return x.name.toLocaleLowerCase().includes(newSearchInputVal);
-  });
-  state.moviesList = newMovies;
-};
+const doSearchWithFilter = (state: WritableDraft<MoviesSliceState>) => {
+  const startingData = [...moviesData];
 
-const applyFilterByGenre = (state: WritableDraft<MoviesSliceState>, newGenre: MovieGenre | "All") => {
-  if (newGenre !== "All") {
-    applySearch(state, state.searchInputValue);
-    const currentMovies = state.moviesList;
-    const newMovies = currentMovies.filter((x) => x.genre.includes(newGenre));
-    state.moviesList = newMovies;
+  // apply search
+  if (state.searchInputValue) {
+    const moviesSearchRes = startingData.filter((x) => {
+      return x.name.toLocaleLowerCase().includes(state.searchInputValue);
+    });
+    state.moviesList = moviesSearchRes;
   } else {
-    applySearch(state, state.searchInputValue);
+    state.moviesList = [...moviesData];
   }
+
+  // apply filter by genre
+  if (state.genreFilterType !== "All") {
+    const currentMovies = state.moviesList;
+    const moviesFilterRes = currentMovies.filter((x) => x.genre.includes(state.genreFilterType as MovieGenre));
+    state.moviesList = moviesFilterRes;
+  }
+
+  // if no search and genre is all > replace with inial data
+  // if (!state.searchInputValue && state.genreFilterType === "All") {
+  //   state.moviesList = [...moviesData];
+  // }
 };
 
 export const moviesActions = MoviesSlice.actions;

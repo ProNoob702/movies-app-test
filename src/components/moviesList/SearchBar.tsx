@@ -26,10 +26,8 @@ export const SearchBar: React.FC<{}> = () => {
         <label htmlFor="search-dropdown" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
           Search
         </label>
-        <select className="custom-select" onChange={handleGenreChange}>
-          <option selected value={"All"}>
-            All
-          </option>
+        <select className="custom-select" onChange={handleGenreChange} defaultValue="All">
+          <option value={"All"}>All</option>
           {GenreArr.map((g) => (
             <option key={g} value={g}>
               {g}

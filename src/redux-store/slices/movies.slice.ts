@@ -1,16 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { WritableDraft } from "immer/dist/internal";
-import { moviesData } from "../../dummie-data/movies.data";
 import { IMovie, MovieGenre } from "../../models/IMovie";
 
 interface MoviesSliceState {
+  rawMoviesList: IMovie[];
   moviesList: IMovie[];
   searchInputValue: string;
   genreFilterType: MovieGenre | "All";
 }
 
 const initialState: MoviesSliceState = {
-  moviesList: [...moviesData],
+  rawMoviesList: [],
+  moviesList: [],
   searchInputValue: "",
   genreFilterType: "All",
 };
@@ -19,6 +20,11 @@ const MoviesSlice = createSlice({
   name: "MoviesSlice",
   initialState,
   reducers: {
+    setMovies(state, action: PayloadAction<IMovie[]>) {
+      const newList = [...action.payload];
+      state.rawMoviesList = newList;
+      state.moviesList = newList;
+    },
     doSearchForMovies(state, action: PayloadAction<string | null>) {
       // trim to avoid search with whitespace
       const newSearchInputVal = action.payload?.trim()?.toLowerCase();
@@ -35,7 +41,7 @@ const MoviesSlice = createSlice({
 });
 
 const doSearchWithFilter = (state: WritableDraft<MoviesSliceState>) => {
-  const startingData = [...moviesData];
+  const startingData = [...state.rawMoviesList];
 
   // apply search
   if (state.searchInputValue) {
@@ -44,7 +50,7 @@ const doSearchWithFilter = (state: WritableDraft<MoviesSliceState>) => {
     });
     state.moviesList = moviesSearchRes;
   } else {
-    state.moviesList = [...moviesData];
+    state.moviesList = [...state.rawMoviesList];
   }
 
   // apply filter by genre

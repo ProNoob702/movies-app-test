@@ -1,24 +1,35 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { IMovie } from "../../models/IMovie";
 import { getMoviesList } from "../../redux-store/selectors/movies.selectors";
-import { useAppSelector } from "../../redux-store/store";
+import { appActions, useAppSelector } from "../../redux-store/store";
 import { CardComponent } from "../shared/card.component";
 import "./MoviesList.scss";
 
 export const MoviesList: React.FC<{}> = () => {
-  const moviesList = useAppSelector((x) => getMoviesList(x));
   return (
     <>
       <SearchBar />
-      {moviesList ? <MoviesZone movies={moviesList} /> : null}
+      <MoviesZone />
     </>
   );
 };
 
 const SearchBar: React.FC<{}> = () => {
+  const [searchText, setSearchText] = useState("");
+  const dispatch = useDispatch();
+
+  const handleUpdateSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(e.target.value);
+  };
+
+  const handleSearch = (e: React.MouseEvent) => {
+    e.preventDefault();
+    dispatch(appActions.doSearchForMovies(searchText));
+  };
+
   return (
     <form>
       <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
@@ -33,9 +44,11 @@ const SearchBar: React.FC<{}> = () => {
           id="default-search"
           className="custom-search-input"
           placeholder="Search Movies..."
+          onChange={handleUpdateSearchText}
+          value={searchText}
           required
         />
-        <button type="submit" className="custom-search-btn">
+        <button type="submit" className="custom-search-btn" onClick={handleSearch}>
           Search
         </button>
       </div>
@@ -43,13 +56,14 @@ const SearchBar: React.FC<{}> = () => {
   );
 };
 
-const MoviesZone: React.FC<{ movies: IMovie[] }> = ({ movies }) => {
+const MoviesZone: React.FC<{}> = () => {
+  const moviesList = useAppSelector((x) => getMoviesList(x));
+  if (!moviesList) return null;
   return (
     <div className="mt-8 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
-      {movies.map((mov) => (
-        <Link to={`/movies/${mov.id}`}>
+      {moviesList.map((mov) => (
+        <Link key={mov.id} to={`/movies/${mov.id}`}>
           <CardComponent
-            key={mov.id}
             title={mov.name}
             chips={mov.genre}
             description={mov.descriptionRaw}

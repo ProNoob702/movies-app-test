@@ -3,10 +3,16 @@
     @apply flex-shrink-0 z-10 inline-flex items-center py-2 px-4 text-sm font-medium text-center
     text-gray-700 bg-gray-200 border border-gray-300 rounded-l-lg;
 
-    min-width: 150px;
     text-transform: capitalize;
     cursor: pointer;
     font-size: 18px;
+    min-width: 150px;
+
+    // special for small devices
+    @media only screen and (max-width: 600px) {
+      min-width: 50px;
+      background-image: none;
+    }
 
     /*Remove decorations to replace arrow with custom arrow */
     appearance: none;

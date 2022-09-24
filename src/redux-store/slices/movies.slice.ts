@@ -20,7 +20,7 @@ const MoviesSlice = createSlice({
   initialState,
   reducers: {
     doSearchForMovies(state, action: PayloadAction<string | null>) {
-      // trim to avoid white search with whitespace
+      // trim to avoid search with whitespace
       const newSearchInputVal = action.payload?.trim()?.toLowerCase();
       if (newSearchInputVal != null) {
         state.searchInputValue = newSearchInputVal;
@@ -53,11 +53,6 @@ const doSearchWithFilter = (state: WritableDraft<MoviesSliceState>) => {
     const moviesFilterRes = currentMovies.filter((x) => x.genre.includes(state.genreFilterType as MovieGenre));
     state.moviesList = moviesFilterRes;
   }
-
-  // if no search and genre is all > replace with inial data
-  // if (!state.searchInputValue && state.genreFilterType === "All") {
-  //   state.moviesList = [...moviesData];
-  // }
 };
 
 export const moviesActions = MoviesSlice.actions;

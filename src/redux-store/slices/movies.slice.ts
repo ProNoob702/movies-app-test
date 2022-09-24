@@ -4,10 +4,12 @@ import { IMovie } from "../../models/IMovie";
 
 interface MoviesSliceState {
   moviesList: IMovie[];
+  searchInputValue: string;
 }
 
 const initialState: MoviesSliceState = {
   moviesList: [...moviesData],
+  searchInputValue: "",
 };
 
 const MoviesSlice = createSlice({
@@ -16,11 +18,12 @@ const MoviesSlice = createSlice({
   reducers: {
     doSearchForMovies(state, action: PayloadAction<string | null>) {
       // trim to avoid white search with whitespace
-      const searchInputVal = action.payload?.trim()?.toLowerCase();
+      const newSearchInputVal = action.payload?.trim()?.toLowerCase();
       // if there is input val => do search
-      if (searchInputVal && searchInputVal.length > 0) {
+      if (newSearchInputVal && newSearchInputVal.length > 0) {
+        state.searchInputValue = newSearchInputVal;
         const newMovies = moviesData.filter((x) => {
-          return x.name.toLocaleLowerCase().includes(searchInputVal);
+          return x.name.toLocaleLowerCase().includes(newSearchInputVal);
         });
         state.moviesList = newMovies;
       } else {

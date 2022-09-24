@@ -15,3 +15,7 @@ export const selectMovieDetails = createSelector(
     }
   }
 );
+
+export const getSearchInputValue = (state: IAppState): string => {
+  return state.moviesState.searchInputValue;
+};

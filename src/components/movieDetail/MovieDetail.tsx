@@ -7,24 +7,38 @@ import parse from "html-react-parser";
 export const MovieDetail: React.FC<{}> = () => {
   const { movieId } = useParams();
   const mov = useAppSelector((state) => (movieId ? selectMovieDetails(state, movieId) : undefined));
-  // return <>{mov ? <div>{parse(mov.descriptionHtml)}</div> : null}</>;
+  if (!mov) return null;
   return (
-    <div
-      className="py-20 h-screen bg-gray-500"
-      style={{
-        backgroundImage: `linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url(${mov?.imgUrl}) `,
-        backgroundSize: "cover",
-      }}
-    >
-      <div className="container mx-auto px-6 mt-40">
-        <h2 className="text-4xl font-bold mb-2 text-white">Experience Luxury Like Never Before</h2>
-        <h3 className="text-2xl mb-8 text-gray-200">50+ Exotic locations across the globe.</h3>
-        <button className="bg-transparent text-white border-2 font-bold rounded-1xl py-4 px-8 shadow-lg uppercase tracking-wider">
-          Explore Locations
-        </button>
+    <>
+      {/* Upper SIDE */}
+      <div
+        className="py-20 bg-gray-500"
+        style={{
+          backgroundImage: `linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url(${mov?.imgUrl}) `,
+          backgroundSize: "cover",
+          backgroundPosition: "top center",
+          height: "350px",
+        }}
+      >
+        <div className="container mx-auto px-6">
+          <h2 className="text-5xl font-bold mb-2 text-white">{mov?.name}</h2>
+          <h3 className="text-2xl mb-8 text-gray-200">{mov?.descriptionRaw}</h3>
+          <div className="flex flex-row">
+            {mov?.genre.map((gnr, i) => (
+              <div
+                className="bg-transparent text-white border-2 font-bold rounded-1xl py-4 px-8 shadow-lg uppercase tracking-wider"
+                style={{
+                  marginLeft: i !== 0 ? "8px" : "0px",
+                }}
+              >
+                {gnr}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+      {/* HTML DESCRIPTION SIDE */}
+      <div className="mt-4 movieDescriptionHtml">{parse(mov.descriptionHtml)}</div>
+    </>
   );
 };
-
-// style="background-image:linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('images/luxury.jpg')">

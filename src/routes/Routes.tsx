@@ -6,9 +6,9 @@ export const AppRoutes: React.FC<{}> = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<Navigate to={"/movies"} replace />} />
-        <Route path="/movies" element={<MoviesList />} />
-        <Route path="/movies/:movieId" element={<MovieDetail />} />
+        <Route path="*" element={<Navigate to={"/"} replace />} />
+        <Route path="/" element={<MoviesList />} />
+        <Route path="/detail/:movieId" element={<MovieDetail />} />
       </Routes>
     </BrowserRouter>
   );

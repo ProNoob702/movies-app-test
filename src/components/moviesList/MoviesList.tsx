@@ -62,7 +62,7 @@ const MoviesZone: React.FC<{}> = () => {
   return (
     <div className="mt-8 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
       {moviesList.map((mov) => (
-        <Link key={mov.id} to={`/movies/${mov.id}`}>
+        <Link key={mov.id} to={`/detail/${mov.id}`}>
           <CardComponent
             title={mov.name}
             chips={mov.genre}

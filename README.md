@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# Intro
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application reprensents a movies collection app it was created on top of latest react version
 
-## Available Scripts
+# Screenshot
 
-In the project directory, you can run:
+![sss](https://user-images.githubusercontent.com/16271638/192155950-77b783bb-af1d-455e-83d3-9c89b8702eb6.gif)
 
-### `npm start`
+### Start project locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+run `npm install --force` than run `npm start`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Run tests 
 
-### `npm test`
+run `npm run test` 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Idea about project
 
-### `npm run build`
+I did this application with create-react-app (typescript template) , I did use tailwind as design library for my components
+the entry point of the app is App.tsx file It gonna sets the layout and shows the MainComponent that handles movies fetching from json file 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+folders are like so :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- components : where i did put app components
+- dummyData : movies data used for test
+- hooks : contain one hook useDebounce that I did use in search bar to enhance search performance 
+- layout : contain components that defines application layout
+- models : some typescript models
+- redux store : where I did put the definition of redux store along with selectors and moviesSlice
+- routes : where i did define react routes with react router
+- services : contain function that fetchs json data 
+- theme : where I did import tailwind stuff and set some custom styles
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Idea about unit tests
+I did put 4 tests in App.test.tsx :
+- Test that checks if loading is shown firstly
+- Test fetching movies result in correct number of links
+- Test Redux store is filled with data
+- Test click link open movie details page

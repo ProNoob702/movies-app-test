@@ -6,7 +6,7 @@ export const Spinner: React.FC<{}> = (props) => {
         className="loadingImg"
         width="50"
         height="50"
-        src={process.env.PUBLIC_URL + "images/coucou.gif"}
+        src={process.env.PUBLIC_URL + "/images/coucou.gif"}
       />
     </div>
   );

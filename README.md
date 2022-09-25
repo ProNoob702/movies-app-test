@@ -37,3 +37,8 @@ I did put 4 tests in App.test.tsx :
 - Test fetching movies result in correct number of links
 - Test Redux store is filled with data
 - Test click link open movie details page
+
+### Notes 
+- Most of components are functional components 
+- I did 2 class components first one is MainComponent the second one is MoviesZone
+

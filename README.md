@@ -8,7 +8,7 @@ This application reprensents a movies collection app it was created on top of la
 
 ### Start project locally
 
-run `npm install --force` than run `npm start`
+run `npm install` than run `npm start`
 
 ### Run tests 
 

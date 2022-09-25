@@ -5,7 +5,6 @@ import { CardComponent } from "../shared/Card";
 import React from "react";
 import { connect } from "react-redux";
 import { IMovie } from "../../models/IMovie";
-import { Spinner } from "../shared/Spinner";
 import { NoResult } from "../shared/NoResult";
 
 interface MoviesZoneProps {
@@ -15,13 +14,11 @@ interface MoviesZoneProps {
 
 class MoviesZone extends React.Component<MoviesZoneProps> {
   render() {
-    // if null than still fetching
-    if (!this.props.moviesList) return <Spinner />;
     // if there is movies but no result
     if (this.props.moviesList && !this.props.moviesList?.length) return <NoResult />;
     return (
       <div className="mt-8 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
-        {this.props.moviesList.map((mov) => (
+        {this.props.moviesList?.map((mov) => (
           <Link key={mov.id} to={`/detail/${mov.id}`}>
             <CardComponent
               title={mov.name}

@@ -11,7 +11,7 @@ interface ICardProps {
 
 export const CardComponent: React.FC<ICardProps> = ({ imgUrl, title, imgHeight, description, chips }) => {
   return (
-    <div className="rounded overflow-hidden shadow-lg">
+    <div className="movie-card rounded overflow-hidden shadow-lg">
       <div
         className={`imgContainer w-full overflow-y-hidden`}
         style={{

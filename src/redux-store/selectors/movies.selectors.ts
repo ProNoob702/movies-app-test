@@ -6,6 +6,10 @@ export const getMoviesList = (state: IAppState): IMovie[] | null => {
   return state.moviesState.moviesList;
 };
 
+export const getFetchingMoviesDoneStatus = (state: IAppState): boolean => {
+  return state.moviesState.moviesList != null;
+};
+
 export const selectMovieDetails = createSelector(
   (state: IAppState, movieId: string) => getMoviesList(state),
   (state: IAppState, movieId: string) => movieId,

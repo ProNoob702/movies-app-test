@@ -32,6 +32,7 @@ export const MovieDetail: React.FC<{}> = () => {
           <div className="flex flex-row">
             {mov?.genre.map((gnr, i) => (
               <div
+                key={gnr}
                 className="bg-transparent text-white border-2 font-bold rounded-1xl py-4 px-8 shadow-lg uppercase tracking-wider"
                 style={{
                   marginLeft: i !== 0 ? "8px" : "0px",
